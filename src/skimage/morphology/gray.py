@@ -367,7 +367,7 @@ def closing(image, footprint=None, out=None, *, mode="reflect", cval=0.0):
 
     The morphological closing of an image is defined as a dilation followed by
     an erosion. Closing can remove small dark spots (i.e. "pepper") and connect
-    small bright cracks. This tends to "close" up (dark) gaps between (bright)
+    small bright cracks. This tends to "close up" (dark) gaps between (bright)
     features.
 
     Parameters
@@ -375,10 +375,10 @@ def closing(image, footprint=None, out=None, *, mode="reflect", cval=0.0):
     image : ndarray
         Image array.
     footprint : ndarray or tuple, optional
-        The neighborhood expressed as a 2-D array of 1's and 0's.
-        If None, use a cross-shaped footprint (connectivity=1). The footprint
-        can also be provided as a sequence of smaller footprints as described
-        in the notes below.
+        The structuring element (footprint) used for the morphological
+        operation. If None, use a cross-shaped footprint (connectivity=1).
+        The footprint can also be provided as a sequence of smaller footprints
+        as described in the notes below.
     out : ndarray, optional
         The array to store the result of the morphology. If None,
         a new array will be allocated.
